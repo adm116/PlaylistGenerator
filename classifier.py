@@ -4,13 +4,16 @@ from constants import *
 
 
 class Classifier:
-    def __init__(self, chillPlaylistName, upbeatPlaylistName):
+    def __init__(self, chillPlaylistName, midPlaylistName, upbeatPlaylistName):
         self.chillPlaylistName = chillPlaylistName
         self.upbeatPlaylistName = upbeatPlaylistName
+        self.midPlaylistName = midPlaylistName
 
     def getClassificationLabel(self, score):
-        if score < CLASSIFICATION_LIMIT:
+        if score < MID_CLASSIFICATION_LIMIT:
             return self.chillPlaylistName
+        elif score < UPBEAT_CLASSIFICATION_LIMIT:
+            return self.midPlaylistName
         else:
             return self.upbeatPlaylistName
 

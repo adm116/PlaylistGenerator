@@ -45,6 +45,7 @@ def generatePlaylists():
 
     data = request.form
     chillPlaylistName = data['chillPlaylistName']
+    midPlaylistName = data['midPlaylistName']
     upbeatPlaylistName = data['upbeatPlaylistName']
     numSongsToClassify = int(data['numTracks'])
     overwritePlaylist = bool(data.get('overwritePlaylist'))
@@ -58,6 +59,7 @@ def generatePlaylists():
         spotipyClass,
         currentUsername,
         chillPlaylistName,
+        midPlaylistName,
         upbeatPlaylistName,
         numSongsToClassify,
         overwritePlaylist)

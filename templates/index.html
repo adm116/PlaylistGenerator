@@ -11,12 +11,14 @@
         <strong>Success! Check your Spotify.</strong>
     </div>
     {% endif %}
-    <p>This playlist generator will pull from your liked songs on Spotify, and generate a chill and upbeat
+    <p>This playlist generator will pull from your liked songs on Spotify, and generate a chill, mid, and upbeat
         playlist. Please fill out the following form.
     </p><br />
     <form action="/generatePlaylists" method="post">
         <label for="chillPlaylistName">Name of chill playlist</label>
         <input type="text" id="chillPlaylistName" name="chillPlaylistName" required=true /><br /><br />
+        <label for="midPlaylistName">Name of mid playlist</label>
+        <input type="text" id="midPlaylistName" name="midPlaylistName" required=true /><br /><br />
         <label for="upbeatPlaylistName">Name of upbeat playlist</label>
         <input type="text" id="upbeatPlaylistName" name="upbeatPlaylistName" required=true /><br /><br />
         <label for="numTracks">Number of tracks to pull from your liked songs</label>

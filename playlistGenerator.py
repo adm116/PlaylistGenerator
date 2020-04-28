@@ -10,16 +10,19 @@ class PlaylistGenerator:
             spotipyClass,
             username,
             chillPlaylistName,
+            midPlaylistName,
             upbeatPlaylistName,
             numSongsToClassify,
             overwritePlaylist):
 
-        self.classifier = Classifier(chillPlaylistName, upbeatPlaylistName)
+        self.classifier = Classifier(
+            chillPlaylistName, midPlaylistName, upbeatPlaylistName)
         self.spotipyClass = spotipyClass
         self.username = username
         self.numSongsToClassify = numSongsToClassify
         self.overwritePlaylist = overwritePlaylist
         self.chillPlaylistName = chillPlaylistName
+        self.midPlaylistName = midPlaylistName
         self.upbeatPlaylistName = upbeatPlaylistName
 
     def generatePlaylists(self):
@@ -69,6 +72,7 @@ class PlaylistGenerator:
         # initialize playlist names with empty tracks
         playlistMap = defaultdict(list)
         playlistMap[self.chillPlaylistName] = []
+        playlistMap[self.midPlaylistName] = []
         playlistMap[self.upbeatPlaylistName] = []
 
         for feature in songFeatures:
