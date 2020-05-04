@@ -49,6 +49,7 @@ def generatePlaylists():
     upbeatPlaylistName = data['upbeatPlaylistName']
     numSongsToClassify = int(data['numTracks'])
     overwritePlaylist = bool(data.get('overwritePlaylist'))
+    maxNumTracks = int(data['maxNumTracks'])
 
     spotipyClass = spotipy.Spotify(
         auth=session.get('token_info').get('access_token'))
@@ -62,7 +63,8 @@ def generatePlaylists():
         midPlaylistName,
         upbeatPlaylistName,
         numSongsToClassify,
-        overwritePlaylist)
+        overwritePlaylist,
+        maxNumTracks)
     generator.generatePlaylists()
 
     return render_template('index.html', showSuccess=True)

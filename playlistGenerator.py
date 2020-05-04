@@ -13,7 +13,8 @@ class PlaylistGenerator:
             midPlaylistName,
             upbeatPlaylistName,
             numSongsToClassify,
-            overwritePlaylist):
+            overwritePlaylist,
+            maxNumTracks):
 
         self.classifier = Classifier(
             chillPlaylistName, midPlaylistName, upbeatPlaylistName)
@@ -24,6 +25,7 @@ class PlaylistGenerator:
         self.chillPlaylistName = chillPlaylistName
         self.midPlaylistName = midPlaylistName
         self.upbeatPlaylistName = upbeatPlaylistName
+        self.maxNumTracks = maxNumTracks
 
     def generatePlaylists(self):
         songsToAdd = self.getTracksToAdd()
@@ -163,6 +165,10 @@ class PlaylistGenerator:
 
             trackIdsToAdd = []
             for trackId in trackIds:
+                # break once we get to maxNumTracks
+                if (len(existingTracks) + len(trackIdsToAdd) >= self.maxNumTracks):
+                    break
+
                 if trackId not in existingTracks:
                     trackIdsToAdd.append(trackId)
 
