@@ -1,4 +1,5 @@
 import spotipy
+import random
 from collections import defaultdict
 from constants import *
 from classifier import Classifier
@@ -151,6 +152,9 @@ class PlaylistGenerator:
 
     def addTracksToPlaylist(self, playlistMappingsToTracks, exisitingPlaylistMappingsToIds):
         for playlist, trackIds in playlistMappingsToTracks.items():
+            # shuffle tracks
+            random.shuffle(trackIds)
+
             if playlist in exisitingPlaylistMappingsToIds.keys():
                 playlistId = exisitingPlaylistMappingsToIds[playlist]
             else:
