@@ -35,7 +35,7 @@ TRACKS_TO_ADD_REQUEST_MAX = 100
 TRACKS_TO_REMOVE_REQUEST_MAX = 100
 
 # whether to create new playlists as public
-CREATE_PUBLIC_PLAYLISTS = False
+CREATE_PUBLIC_PLAYLISTS = True
 
 # Server-side Parameters
 PORT = 80

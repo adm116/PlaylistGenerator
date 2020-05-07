@@ -79,9 +79,8 @@ class PlaylistGenerator:
     def getPlaylistMappingsToTracks(self, songFeatures):
         # initialize playlist names with empty tracks
         playlistMap = defaultdict(list)
-        playlistMap[ULTRA_CHILL_PLAYLIST] = []
-        playlistMap[CHILL_PLAYLIST] = []
-        playlistMap[UPBEAT_PLAYLIST] = []
+        for playlistName in self.playlistNames:
+            playlistMap[playlistName] = []
 
         for feature in songFeatures:
             tempo = feature['tempo']
