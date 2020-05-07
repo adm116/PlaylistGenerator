@@ -7,6 +7,11 @@ DANCEABILITY_WEIGHT = 0.3
 TEMPO_WEIGHT = 0.1
 ACOUSTICNESS_WEIGHT = 0.2
 
+# playlist names
+ULTRA_CHILL_PLAYLIST = "ultra chill (#generated)"
+CHILL_PLAYLIST = "chill (#generated)"
+UPBEAT_PLAYLIST = "upbeat (#generated)"
+
 # normalize constants
 MAX_TEMPO = 180.0
 MIN_TEMPO = 60.0

@@ -11,22 +11,11 @@
         <strong>Success! Check your Spotify.</strong>
     </div>
     {% endif %}
-    <p>This playlist generator will pull from your liked songs on Spotify, and generate a chill, mid, and upbeat
-        playlist. Please fill out the following form.
+    <p>This playlist generator will randomly pull from your liked songs on Spotify and will categorize them into the following playlists: ultra-chill, chill, or upbeat. These playlists will then be available on your Spotify account.
     </p><br />
     <form action="/generatePlaylists" method="post">
-        <label for="chillPlaylistName">Name of chill playlist</label>
-        <input type="text" id="chillPlaylistName" name="chillPlaylistName" required=true /><br /><br />
-        <label for="midPlaylistName">Name of mid playlist</label>
-        <input type="text" id="midPlaylistName" name="midPlaylistName" required=true /><br /><br />
-        <label for="upbeatPlaylistName">Name of upbeat playlist</label>
-        <input type="text" id="upbeatPlaylistName" name="upbeatPlaylistName" required=true /><br /><br />
-        <label for="numTracks">Number of tracks to look through from your liked songs</label>
-        <input type="number" id="numTracks" name="numTracks" min="1" max="500" value='100' required=true /><br /><br />
-        <label for="maxNumTracks">Maximum number of tracks per playlist</label>
+        <label for="maxNumTracks">How many tracks would you like per playlist?</label>
         <input type="number" id="maxNumTracks" name="maxNumTracks" min="1" max="500" value='40' required=true /><br /><br />
-        <label for="overwritePlaylist">Do you want to overwrite the playlists if they already exist?</label>
-        <input type="checkbox" id="overwritePlaylist" name="overwritePlaylist" value="overwrite" /><br /><br />
         <button type="submit" class="submitButton" id="submitButton">Generate Playlists</button>
     </form>
 </body>

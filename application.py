@@ -44,11 +44,6 @@ def generatePlaylists():
         return redirect('/')
 
     data = request.form
-    chillPlaylistName = data['chillPlaylistName']
-    midPlaylistName = data['midPlaylistName']
-    upbeatPlaylistName = data['upbeatPlaylistName']
-    numSongsToClassify = int(data['numTracks'])
-    overwritePlaylist = bool(data.get('overwritePlaylist'))
     maxNumTracks = int(data['maxNumTracks'])
 
     spotipyClass = spotipy.Spotify(
@@ -59,11 +54,6 @@ def generatePlaylists():
     generator = PlaylistGenerator(
         spotipyClass,
         currentUsername,
-        chillPlaylistName,
-        midPlaylistName,
-        upbeatPlaylistName,
-        numSongsToClassify,
-        overwritePlaylist,
         maxNumTracks)
     generator.generatePlaylists()
 
