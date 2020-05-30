@@ -38,10 +38,10 @@ TRACKS_TO_REMOVE_REQUEST_MAX = 100
 CREATE_PUBLIC_PLAYLISTS = True
 
 # Server-side Parameters
-PORT = 80
+PORT = os.environ['PORT']
 
 # spotify app credentials
 SPOTIFY_CLIENT_ID = os.environ['SPOTIFY_CLIENT_ID']
 SPOTIFY_CLIENT_SECRET = os.environ['SPOTIFY_CLIENT_SECRET']
-SPOTIFY_REDIRECT_URL = 'https://customplaylistgenerator.azurewebsites.net/callback'
+SPOTIFY_REDIRECT_URL = os.environ['SPOTIFY_REDIRECT_URL']
 SSK = os.environ['SSK']
